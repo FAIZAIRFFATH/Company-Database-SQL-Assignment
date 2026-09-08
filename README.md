@@ -1,33 +1,25 @@
 # Company Database System (company_db)
+
 **Author:** Faiza Irffath  
-**Assignment:** Basic & Intermediate Queries (Approved - Score: 92/100)
+**Portfolio Scope:** Relational Design, Modification, and Advanced Database Programming
 
-## 📋 Assignment Objectives & Tasks
-This project addresses the following data manipulation and extraction tasks:
-1. **Retrieve all employees** from the employees table.
-2. **Select employees** working specifically in the 'Sales' department.
-3. **List unique job titles** available across the organization.
-4. **Sort employees** by salary metrics in descending order.
-5. **Count the total number** of employees currently registered.
-6. **Show the average salary** distributed per department.
-7. **Join employees and departments** to show employee names side-by-side with their department names.
+---
 
-## 1. Database Architecture & Design Rationale
-This database is structured utilizing relational principles optimized to meet Third Normal Form (3NF) requirements:
-* **First Normal Form (1NF):** All columns contain atomic values; there are no repeating groups.
-* **Second Normal Form (2NF):** Every table possesses a dedicated Primary Key, and all non-key attributes are fully dependent on that key.
-* **Third Normal Form (3NF):** Transitive dependencies have been eliminated. Department names rely on department IDs, which in turn map back to companies.
+## 🛠️ Portfolio Contents
 
-### Schema Relationships
-1. **Companies to Departments (1:M):** A parent company can contain multiple departmental branches.
-2. **Departments to Employees (1:M):** Each department can house multiple employees.
-3. **Manager self-reference (1:M):** Employees map to their specific direct manager inside the same table.
+### 1. Database Design & Normalization (Assignment 1)
+*   **Key Concepts:** Entity-Relationship (ER) planning, Primary Keys (PK), Foreign Keys (FK), and Table Creation (`CREATE TABLE`).
+*   **Core Focus:** Designing the foundational blueprint and rules for the corporate relational structure.
 
-## 2. Optimization & Performance Strategies
-* **Foreign Key Indexing:** Explicit non-clustered indexes are assigned to `dept_id` and `company_id` to speed up relational `INNER JOIN` operations.
-* **Query Attribute Indexing:** Non-clustered indexes are assigned to high-frequency query targets (`salary`, `job_title`) to prevent costly full-table scans.
+### 2. Database Foundations & Querying (Assignment 2)
+*   **Key Concepts:** Basic data extraction, filtering (`WHERE`), sorting (`ORDER BY`), aggregate statistics (`COUNT`, `AVG`), and standard multi-table connectivity (`INNER JOIN`).
+*   **Core Focus:** Pulling relevant information out of the system and matching workforce layers with core departments.
 
-## 3. Data Integrity & Constraints
-* **CHECK Constraints:** Enforces that employee salaries must always strictly exceed zero (`salary > 0`).
-* **UNIQUE Constraints:** Prevents duplicate corporate naming conventions within the marketplace.
-* **DEFAULT Timestamps:** Automatically records system date parameters when new records are written.
+### 3. Advanced Querying & Analytical Logic (Assignment 3)
+*   **Key Concepts:** Self-referential joins, uncorrelated scalar subqueries, Common Table Expressions (CTEs), and window analysis functions (`DENSE_RANK`).
+*   **Core Focus:** Solving intricate business logic problems like mapping out full employee-to-manager tracking hierarchies.
+
+### 4. Data Modification & Integrity Constraints (Assignment 4)
+*   **Key Concepts:** Multi-table relational updates (`UPDATE` / `DELETE`), operational data abstraction layers (`VIEW`), active runtime rules (`CHECK` constraints), and structural performance tuning (`NONCLUSTERED INDEX`).
+*   **Core Focus:** Maintaining strict data safety rules and optimizing structural search paths for high-speed queries.
+
